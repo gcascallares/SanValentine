@@ -150,9 +150,19 @@
     max-width: 100%;  /* Para asegurarse de que el contenido no se estire fuera de la pantalla */
     padding: 0 15px;
 }
+.loader_bg {
+  position: fixed;
+  z-index: 9999999;
+  background: #000000;
+  width: 100%;
+  height: 100%;
+}
     </style>
 </head>
 <body>
+    <div class="loader_bg">
+        <div class="loader"><img src="loading.gif" alt="#" /></div>
+      </div>
     <main>
     <img src="titulo.png" alt="Feliz San Valentín" class="img-fluid mt-3">
     <button class="btn btn-danger mt-3" onclick="document.getElementById('music').play()">🎵 Reproducir música</button>
@@ -227,6 +237,20 @@
             setTimeout(() => heart.remove(), 5000);
         }
         setInterval(createHeart, 500);
+
+        document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+                let loader = document.querySelector(".loader_bg");
+                if (loader) {
+                    loader.style.opacity = "0"; // Se desvanece
+                    loader.style.transition = "opacity 0.5s ease-out";
+                    setTimeout(() => {
+                        loader.style.display = "none"; // Se oculta completamente
+                    }, 25000);
+                }
+            }, 5000);
+        });
+        
     </script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
