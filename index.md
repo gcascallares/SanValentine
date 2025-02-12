@@ -160,9 +160,9 @@
     </style>
 </head>
 <body>
-    <div class="loader_bg">
+ <!--   <div class="loader_bg">
         <div class="loader"><img src="loading.gif" alt="#" /></div>
-      </div>
+      </div>-->
     <main>
     <img src="titulo.png" alt="Feliz San Valentín" class="img-fluid mt-3">
     <button class="btn btn-danger mt-3" onclick="document.getElementById('music').play()">🎵 Reproducir música</button>
